@@ -1,0 +1,74 @@
+<ion-view class="view_login" viewTitle="">
+
+	<ion-content class="content_login">
+		
+		<h1>#PlacesAroundBrazil</h1>
+
+		<div ng-show="!contemErros">	
+			<h2>Cadastre-se!</h2>
+			<h3>Insira as informações abaixo e aproveite o que de melhor temos para te oferecer</h3>
+		</div>
+
+		<div class="card" ng-show="contemErros">
+			<div class="item item-text-wrap" ng-show="nomeEmBranco">
+				Insira seu nome de usuário. 
+			</div>
+			<div class="item item-text-wrap" ng-show="sexoEmBranco">
+				Selecione seu sexo.
+			</div>
+			<div class="item item-text-wrap" ng-show="idadeEmBranco">
+				Selecione sua faixa etária.
+			</div>			
+			<div class="item item-text-wrap" ng-show="usuarioEmBranco">
+				Insira seu Nome de Usuário.
+			</div>						
+			<div class="item item-text-wrap" ng-show="loginEmUso">
+				Este Nome de Usuário já está em uso.
+			</div>							
+			<div class="item item-text-wrap" ng-show="senhaEmBranco">
+				Insira sua senha
+			</div>										
+		</div>
+
+
+		<div class="list list-inset padding">
+
+			<label class="list item-input"> 
+				<input type="text" ng-model="usuario.nome" placeholder="Nome e Sobrenome"></input>
+			</label>
+
+			<label class="list item-input item-select"> 
+				<div class="input-label">Sexo</div>
+				<select ng-model="usuario.sexo">
+					<option selected>Masculino</option>
+					<option>Feminino</option>
+				</select>
+			</label>			
+
+			<label class="list item-input item-select"> 
+				<div class="input-label">Idade</div>
+				<select ng-model="usuario.idade">
+					<option selected>18 á 30 anos</option>
+					<option>31 á 50 anos</option>
+					<option>51 anos à 65 anos</option>
+					<option>Acima de 65 anos</option>
+				</select>
+			</label>
+
+			<label class="list item-input"> 
+				<input type="text" ng-model="usuario.login" placeholder="Nome de Usuário"></input>
+			</label>
+
+			<label class="list item-input"> 
+				<input type="password" ng-model="usuario.senha" placeholder="Senha"></input>
+			</label>
+
+			<label class="list item-button">
+				<button class="button button-block button-positive" ng-click="cadastrar()">QUERO ME CADASTRAR AGORA</button>
+			</label>
+
+		</div>
+
+	</ion-content>
+
+</ion-view>

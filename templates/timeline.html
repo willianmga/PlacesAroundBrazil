@@ -1,0 +1,33 @@
+<ion-view class="view_timeline" viewTitle="">
+
+	<div class="bar bar-header bar-positive">
+	   <h1 class="title">#PlacesAroundBrazil</h1>
+	</div>
+
+	<div class="bar bar-subheader">
+       <h2 class="title">Quais lugares você visitaria no Brasil?</h2>
+	</div>
+
+	<ion-content class="has-header has-subheader has-footer">
+	   <div class="list">
+          <div ng-repeat="lugar in lugares">   
+             <a class="item item-thumbnail-left" ng-click="exibirOcultar(lugar)">
+                <img ng-src="{{lugar.imagem}}">
+             	<h2>{{lugar.titulo}}</h2>
+             	<p>{{lugar.descricao}}</p>
+             	<i class="icon ion-arrow-right-c" ng-hide="lugar.exibir"></i>
+                <i class="icon ion-arrow-down-c" ng-show="lugar.exibir"></i>
+             </a>
+             <div class="item item-text-wrap" ng-show="lugar.exibir">
+                {{lugar.detalhe}}
+             </div>
+			 <div class="button-bar" ng-show="lugar.exibir">
+			    <a class="button button-balanced">Na hora!</a>
+			    <a class="button button-energized">Talvez</a>
+			    <a class="button button-assertive">Nunca</a>
+			 </div>             
+             <div class="item item-divider" ng-show="lugar.exibir"></div>
+          </div>
+	   </div>
+	</ion-content>
+</ion-view>

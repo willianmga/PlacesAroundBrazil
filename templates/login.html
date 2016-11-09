@@ -1,0 +1,45 @@
+<ion-view class="view_login" viewTitle="">
+
+	<ion-content class="content_login">
+		
+		
+			<h1>#PlacesAroundBrazil</h1>
+
+		<div ng-show="!contemErros">	
+			<h2>Todo mundo precisa de férias</h2>
+			<h3>Bora planejar a sua?</h3>
+		</div>
+		<div class="card" ng-show="contemErros">
+			<div class="item item-text-wrap" ng-show="usuarioEmBranco">
+				Insira seu nome de usuário. 
+			</div>	
+			<div class="item item-text-wrap" ng-show="senhaEmBranco">
+				Insira sua senha
+			</div>										
+			<div class="item item-text-wrap" ng-show="loginNaoEncontrado">
+				Login não encontrado! Tente novamente
+			</div>			
+		</div>
+
+		<div class="list list-inset padding">
+
+			<label class="list item-input"> 
+				<input type="text" placeholder="Insira seu Login" ng-model="usuario.login"></input>
+			</label>
+			<label class="list item-input"> 
+				<input type="password" placeholder="Insira sua senha" ng-model="usuario.senha"></input>
+			</label>
+			<label class="list item-button">
+				<button class="button button-block button-positive" 
+				ng-click="fazerLogin()">LOGIN</button>
+			</label>
+			<label class="list item-button">
+				<button class="button button-block button-outline button-positive" 
+				ng-click="cadastrar()">QUERO ME CADASTRAR</button>
+			</label>			
+
+		</div>
+
+	</ion-content>
+
+</ion-view>
